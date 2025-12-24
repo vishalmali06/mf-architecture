@@ -29,7 +29,7 @@ export default function AppProgrammatic() {
         name,
         entry,
         container: containerRef.current!,
-        props: { from: "dashboard" },
+        props: { from: "dashboard", base: `/${name}`},
       },
       {
         sandbox: { experimentalStyleIsolation: true },
