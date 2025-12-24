@@ -6,10 +6,10 @@ export default function AppRoutes() {
     registerMicroApps(
       [
         {
-          name: 'devTinder',
+          name: 'aap1',
           entry: 'http://localhost:5173/',
           container: '#micro-container',
-          activeRule: '/devTinder',
+          activeRule: '/aap1',
           props: { from: 'dashboard' }
         },
         {
@@ -33,7 +33,7 @@ export default function AppRoutes() {
         <span className="brand">Dashboard</span>
         <nav style={{ marginLeft: 16 }}>
           <a onClick={() => go('/')}>Home</a>
-          <a onClick={() => go('/devTinder')}>devTinder</a>
+          <a onClick={() => go('/aap1')}>App 1</a>
           <a onClick={() => go('/app2')}>App 2</a>
         </nav>
       </header>

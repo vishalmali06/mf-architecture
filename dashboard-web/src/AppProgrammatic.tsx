@@ -14,15 +14,15 @@ export default function AppProgrammatic() {
     };
   }, []);
 
-  const loadApp = (name: "devTinder" | "app2" | null) => {
+  const loadApp = (name: "app1" | "app2" | null) => {
     microRef.current?.unmount();
     microRef.current = null;
     setActive(name);
     if (!name) return;
 
     const entry =
-      // name === "devTinder" ? "http://localhost:3001/" : "http://localhost:3002/";
-      name === "devTinder" ? "https://vishalmali.com/devtinder/" : "https://vishalmali.com/florist/";
+      // name === "app1" ? "http://localhost:3001/" : "http://localhost:3002/";
+      name === "app1" ? "https://vishalmali.com/app1/" : "https://vishalmali.com/app2/"
 
     const micro = loadMicroApp(
       {
@@ -50,10 +50,10 @@ export default function AppProgrammatic() {
             Home
           </a>
           <a
-            className={active === "devTinder" ? "active" : ""}
-            onClick={() => loadApp("devTinder")}
+            className={active === "app1" ? "active" : ""}
+            onClick={() => loadApp("app1")}
           >
-            devTinder
+            App 1
           </a>
           <a
             className={active === "app2" ? "active" : ""}
@@ -69,7 +69,7 @@ export default function AppProgrammatic() {
           <div style={{ opacity: 0.8 }}>
             <h1>Welcome to Dashboard</h1>
             <p>
-              Select <strong>devTinder</strong> or <strong>App 2</strong> to load it
+              Select <strong>App 1</strong> or <strong>App 2</strong> to load it
               here.
             </p>
           </div>
