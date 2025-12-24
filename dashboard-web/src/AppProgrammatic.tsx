@@ -21,7 +21,8 @@ export default function AppProgrammatic() {
     if (!name) return;
 
     const entry =
-      name === "devTinder" ? "http://localhost:3001/" : "http://localhost:3002/";
+      // name === "devTinder" ? "http://localhost:3001/" : "http://localhost:3002/";
+      name === "devTinder" ? "https://vishalmali.com/devtinder/" : "https://vishalmali.com/florist/";
 
     const micro = loadMicroApp(
       {
