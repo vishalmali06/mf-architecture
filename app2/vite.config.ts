@@ -4,8 +4,15 @@ import qiankun from 'vite-plugin-qiankun';
 
 export default defineConfig({
   base: "/app2/",
-  plugins: [react(), qiankun("app2", { useDevMode: false })],
-  server: { port: 3001, cors: true },
+  plugins: [
+    react(),
+    qiankun(
+      "app2",
+      // { useDevMode: true }
+      { useDevMode: false }
+    )
+  ],
+  server: { port: 3002, cors: true },
   build: {
     outDir: 'dist',
     assetsDir: "assets",

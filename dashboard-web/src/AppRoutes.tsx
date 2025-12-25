@@ -7,14 +7,16 @@ export default function AppRoutes() {
       [
         {
           name: 'aap1',
-          entry: 'http://localhost:5173/',
+          // entry: 'http://localhost:3001/',
+          entry: 'https://vishalmali.com/app1/',
           container: '#micro-container',
           activeRule: '/aap1',
           props: { from: 'dashboard' }
         },
         {
           name: 'app2',
-          entry: 'http://localhost:3002/',
+          // entry: 'http://localhost:3002/',
+          entry: 'https://vishalmali.com/app12',
           container: '#micro-container',
           activeRule: '/app2',
           props: { from: 'dashboard' }
