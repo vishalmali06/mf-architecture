@@ -33,7 +33,7 @@ const MICRO_APPS: Record<MicroAppName, MicroAppConfig> = {
     name: "devtinder",
     entry: {
       local: "http://localhost:3003/",
-      prod: "https://vishalmali.com/devtinder/",
+      prod: "https://vishalmali.com/",
     },
   },
 };
