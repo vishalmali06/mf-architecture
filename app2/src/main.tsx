@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom/client';
-import App2 from './App';
 import { renderWithQiankun, qiankunWindow } from 'vite-plugin-qiankun/dist/helper';
+import App2 from './App';
 
 let root: ReactDOM.Root | null = null;
 
