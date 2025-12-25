@@ -35,7 +35,7 @@ export default function AppRoutes() {
         <span className="brand">Dashboard</span>
         <nav style={{ marginLeft: 16 }}>
           <a onClick={() => go('/')}>Home</a>
-          <a onClick={() => go('/aap1')}>App 1</a>
+          <a onClick={() => go('/app1')}>App 1</a>
           <a onClick={() => go('/app2')}>App 2</a>
         </nav>
       </header>
