@@ -11,7 +11,7 @@ export default function AppRoutes() {
           entry: 'https://vishalmali.com/app1/',
           container: '#micro-container',
           activeRule: '/app1',
-          props: { from: 'dashboard' }
+          props: { from: 'dashboard', base: 'app1'}
         },
         {
           name: 'app2',
@@ -19,7 +19,7 @@ export default function AppRoutes() {
           entry: 'https://vishalmali.com/app2/',
           container: '#micro-container',
           activeRule: '/app2',
-          props: { from: 'dashboard' }
+          props: { from: 'dashboard', base: 'app2'}
         }
       ]
     );

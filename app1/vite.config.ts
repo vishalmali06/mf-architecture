@@ -9,7 +9,6 @@ export default defineConfig({
     qiankun(
       "app1",
       // { useDevMode: true }
-      { useDevMode: false }
     )
   ],
   server: { port: 3001, cors: true },
