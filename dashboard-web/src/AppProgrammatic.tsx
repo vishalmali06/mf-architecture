@@ -1,5 +1,16 @@
 import { useEffect, useRef, useState } from "react";
 import { loadMicroApp, type MicroApp } from "qiankun";
+import './App.css';
+import Hero from "./components/sections/Hero";
+import Timeline from "./components/sections/Timeline";
+import Experience from "./components/sections/Experience";
+import Mindset from "./components/sections/Mindset";
+import Projects from "./components/sections/Projects";
+import Teaching from "./components/sections/Teaching";
+import Now from "./components/sections/Now";
+import Contact from "./components/sections/Contact";
+import Navbar from "./components/layout/Navbar";
+import BackToTop from "./ui/BackToTop";
 
 /* -----------------------------
    Types & Config (STATIC)
@@ -91,7 +102,7 @@ export default function AppProgrammatic() {
   return (
     <>
       <header>
-        <span className="brand">Dashboard</span>
+        {/* <span className="brand">Dashboard</span> */}
         <nav style={{ marginLeft: 16 }}>
           <a className={!active ? "active" : ""} onClick={() => loadApp(null)}>
             Home
@@ -117,20 +128,30 @@ export default function AppProgrammatic() {
         </nav>
       </header>
 
-      <main className="container">
+      <main className="w-full p-1">
         {!active && (
           <div style={{ opacity: 0.8 }}>
-            <h1>Welcome to Dashboard</h1>
-            <p>
-              Select <strong>App 1</strong> or <strong>App 2</strong> to load it
-              here.
-            </p>
+            <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+              <Navbar />
+              <Hero />
+              <Timeline />
+              <Experience />
+              <Mindset />
+              <Projects />
+              <Teaching />
+              <Now />
+              <Contact />
+              <BackToTop />
+            </div>
           </div>
         )}
         <div id="micro-container" ref={containerRef} />
       </main>
 
-      <footer>© {new Date().getFullYear()} Dashboard — qiankun + Vite</footer>
+      <footer className="py-6 text-center text-sm text-gray-500">
+        © {new Date().getFullYear()} Vishal Mali
+      </footer>
+
     </>
   );
 }
