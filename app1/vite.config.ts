@@ -8,7 +8,7 @@ export default defineConfig({
     react(),
     qiankun(
       "app1",
-      // { useDevMode: true }
+      { useDevMode: true }
     )
   ],
   server: { port: 3001, cors: true },

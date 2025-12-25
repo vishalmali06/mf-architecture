@@ -1,12 +1,55 @@
-
 import { useEffect, useRef, useState } from "react";
 import { loadMicroApp, type MicroApp } from "qiankun";
 
+/* -----------------------------
+   Types & Config (STATIC)
+-------------------------------- */
+type MicroAppName = "app1" | "app2" | "devtinder";
+
+interface MicroAppConfig {
+  name: MicroAppName;
+  entry: {
+    local: string;
+    prod: string;
+  };
+}
+
+const MICRO_APPS: Record<MicroAppName, MicroAppConfig> = {
+  app1: {
+    name: "app1",
+    entry: {
+      local: "http://localhost:3001/",
+      prod: "https://vishalmali.com/app1/",
+    },
+  },
+  app2: {
+    name: "app2",
+    entry: {
+      local: "http://localhost:3002/",
+      prod: "https://vishalmali.com/app2/",
+    },
+  },
+  devtinder: {
+    name: "devtinder",
+    entry: {
+      local: "http://localhost:3003/",
+      prod: "https://vishalmali.com/devtinder/",
+    },
+  },
+};
+
+/* Runtime environment detection (NO .env) */
+const isProd = window.location.hostname.endsWith("vishalmali.com");
+
+/* -----------------------------
+   Component
+-------------------------------- */
 export default function AppProgrammatic() {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const microRef = useRef<MicroApp | null>(null);
-  const [active, setActive] = useState<string | null>(null);
+  const [active, setActive] = useState<MicroAppName | null>(null);
 
+  /* Cleanup on unmount */
   useEffect(() => {
     return () => {
       microRef.current?.unmount();
@@ -14,22 +57,28 @@ export default function AppProgrammatic() {
     };
   }, []);
 
-  const loadApp = (name: "app1" | "app2" | null) => {
+  const loadApp = (name: MicroAppName | null) => {
+    // Avoid reloading the same app
+    if (active === name) return;
+
     microRef.current?.unmount();
     microRef.current = null;
     setActive(name);
+
     if (!name) return;
 
-    const entry =
-      // name === "app1" ? "http://localhost:3001/" : "http://localhost:3002/";
-      name === "app1" ? "https://vishalmali.com/app1/" : "https://vishalmali.com/app2/"
+    const app = MICRO_APPS[name];
+    const entry = isProd ? app.entry.prod : app.entry.local;
 
-    const micro = loadMicroApp(
+    microRef.current = loadMicroApp(
       {
-        name,
+        name: app.name,
         entry,
         container: containerRef.current!,
-        props: { from: "dashboard", base: `/${name}`},
+        props: {
+          from: "dashboard",
+          base: `/${app.name}`,
+        },
       },
       {
         sandbox: { experimentalStyleIsolation: true },
@@ -37,8 +86,6 @@ export default function AppProgrammatic() {
         prefetch: false,
       }
     );
-
-    microRef.current = micro;
   };
 
   return (
@@ -60,6 +107,12 @@ export default function AppProgrammatic() {
             onClick={() => loadApp("app2")}
           >
             App 2
+          </a>
+          <a
+            className={active === "devtinder" ? "active" : ""}
+            onClick={() => loadApp("devtinder")}
+          >
+            devTinder
           </a>
         </nav>
       </header>

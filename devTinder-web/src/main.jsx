@@ -29,7 +29,7 @@ renderWithQiankun({
     unmount();
   },
   update(props) {
-    console.log("devTinder update", props);
+    console.log("devtinder update", props);
   },
 });
 
