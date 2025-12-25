@@ -6,11 +6,11 @@ export default function AppRoutes() {
     registerMicroApps(
       [
         {
-          name: 'aap1',
+          name: 'app1',
           // entry: 'http://localhost:3001/',
           entry: 'https://vishalmali.com/app1/',
           container: '#micro-container',
-          activeRule: '/aap1',
+          activeRule: '/app1',
           props: { from: 'dashboard' }
         },
         {
