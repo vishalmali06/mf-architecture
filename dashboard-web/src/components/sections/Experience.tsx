@@ -20,7 +20,7 @@ const Experience: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: idx * 0.1 }}
           >
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card>
               <div className="flex flex-col lg:flex-row gap-8">
                 
                 {/* LEFT – STORY */}
