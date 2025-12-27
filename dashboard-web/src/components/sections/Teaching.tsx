@@ -9,7 +9,7 @@ const Teaching: React.FC = () => {
     >
       <SectionTitle
         title="Teaching & Knowledge Sharing"
-        subtitle="Learning, mentoring, and growing together"
+        subtitle="Mentoring teams, sharing real-world insights, and learning continuously"
       />
 
       <div className="space-y-10">

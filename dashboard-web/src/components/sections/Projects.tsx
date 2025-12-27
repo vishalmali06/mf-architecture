@@ -1,5 +1,5 @@
-import SectionTitle from '../../ui/SectionTitle';
-import { projects } from '../../data/projects';
+import SectionTitle from "../../ui/SectionTitle";
+import { projects } from "../../data/projects";
 
 const Projects: React.FC = () => {
   return (
@@ -9,42 +9,42 @@ const Projects: React.FC = () => {
     >
       <SectionTitle
         title="Projects That Define My Work"
-        subtitle="A few meaningful problems I enjoyed solving"
+        subtitle="Enterprise systems where architecture, scale, and impact mattered"
       />
 
-      <div className="grid gap-8 md:grid-cols-3">
-        {projects.map(project => (
+      <div className="grid gap-8 md:grid-cols-2">
+        {projects.map((project) => (
           <div
             key={project.id}
             className="
-              group relative p-6 rounded-2xl
+              group relative p-7 rounded-2xl
               border border-gray-200 dark:border-gray-700
-              bg-white dark:bg-gray-800
+              bg-white dark:bg-gray-900
               hover:-translate-y-1 hover:shadow-xl
               transition-all duration-300
             "
           >
-            {/* Top Accent */}
-            <div className="absolute top-0 left-0 w-full h-1 rounded-t-2xl bg-gradient-to-r from-indigo-500 to-purple-500" />
+            {/* Accent bar */}
+            <div className="absolute top-0 left-0 ml-2 w-[97%] h-0.5 rounded-t-2xl bg-gradient-to-r from-indigo-500 to-purple-500" />
 
             {/* Title */}
-            <h3 className="text-xl font-bold mt-4 mb-2">
+            <h3 className="text-xl font-semibold mt-4 mb-2 text-gray-900 dark:text-gray-100">
               {project.title}
             </h3>
 
             {/* Short Description */}
-            <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+            <p className="text-sm text-gray-600 dark:text-gray-400 mb-5">
               {project.shortDesc}
             </p>
 
             {/* Highlights */}
-            <ul className="space-y-2 mb-4">
+            <ul className="space-y-2 mb-6">
               {project.highlights.map((point, index) => (
                 <li
                   key={index}
-                  className="text-sm flex items-start gap-2"
+                  className="flex items-start gap-3 text-sm"
                 >
-                  <span className="text-indigo-500">▹</span>
+                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-indigo-500 shrink-0" />
                   <span className="text-gray-700 dark:text-gray-300">
                     {point}
                   </span>
@@ -53,8 +53,8 @@ const Projects: React.FC = () => {
             </ul>
 
             {/* Tech Stack */}
-            <div className="flex flex-wrap gap-2 mt-auto">
-              {project.tech.map(t => (
+            <div className="flex flex-wrap gap-2">
+              {project.tech.map((t) => (
                 <span
                   key={t}
                   className="
@@ -68,9 +68,9 @@ const Projects: React.FC = () => {
               ))}
             </div>
 
-            {/* Hover Hint */}
-            <div className="absolute bottom-4 right-4 text-xs opacity-0 group-hover:opacity-100 transition">
-              🚀
+            {/* Hover hint */}
+            <div className="absolute bottom-4 right-4 text-xs text-indigo-500 opacity-0 group-hover:opacity-100 transition">
+              Case study mindset →
             </div>
           </div>
         ))}

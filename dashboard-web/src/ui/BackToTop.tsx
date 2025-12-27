@@ -4,20 +4,27 @@ const BackToTop: React.FC = () => {
     const [visible, setVisible] = useState(false);
 
     useEffect(() => {
+        const container = document.getElementById("app-content");
+        if (!container) return;
+
         const onScroll = () => {
-            setVisible(window.scrollY > 300);
+            setVisible(container.scrollTop > 300);
         };
 
-        window.addEventListener('scroll', onScroll);
-        return () => window.removeEventListener('scroll', onScroll);
+        container.addEventListener("scroll", onScroll);
+        return () => container.removeEventListener("scroll", onScroll);
     }, []);
 
+
     const scrollToTop = () => {
-        window.scrollTo({
+        const container = document.getElementById("app-content");
+
+        container?.scrollTo({
             top: 0,
-            behavior: 'smooth',
+            behavior: "smooth",
         });
     };
+
 
     return (
         <button
