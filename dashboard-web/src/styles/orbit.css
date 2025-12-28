@@ -7,7 +7,7 @@
 }
 
 .orbit {
-  --radius: 450px;     /* 👈 control orbit size here */
+  --radius: 400px;     /* 👈 control orbit size here */
   border-radius: 50%;
   animation: antiSpin 22s linear infinite;
 }
