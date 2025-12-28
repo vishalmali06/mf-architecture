@@ -38,7 +38,7 @@ export default function AppProgrammatic() {
   };
 
   return (
-    <div style={{ opacity: 0.8 }}>
+    // <div style={{ opacity: 0.9 }}>
       <div className="flex h-screen bg-gray-100 dark:bg-gray-900">
         <SideDrawer
           open={drawerOpen}
@@ -53,7 +53,7 @@ export default function AppProgrammatic() {
         </main>
         <BackToTop />
       </div>
-    </div>
+    // </div>
   );
 }
 

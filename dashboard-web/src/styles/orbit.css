@@ -1,0 +1,37 @@
+.orbit-wrap {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.orbit {
+  --radius: 450px;     /* 👈 control orbit size here */
+  border-radius: 50%;
+  animation: antiSpin 22s linear infinite;
+}
+  
+  @keyframes antiSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+  }
+  
+  .o-item {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  }
+  
+/* Equal angular spacing with smaller orbit */
+
+.i1 { transform: rotate(0deg)    translate(var(--radius)) rotate(0deg); }
+.i2 { transform: rotate(51.43deg) translate(var(--radius)) rotate(-51.43deg); }
+.i3 { transform: rotate(102.86deg) translate(var(--radius)) rotate(-102.86deg); }
+.i4 { transform: rotate(154.29deg) translate(var(--radius)) rotate(-154.29deg); }
+.i5 { transform: rotate(205.72deg) translate(var(--radius)) rotate(-205.72deg); }
+.i6 { transform: rotate(257.15deg) translate(var(--radius)) rotate(-257.15deg); }
+.i7 { transform: rotate(308.58deg) translate(var(--radius)) rotate(-308.58deg); }

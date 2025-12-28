@@ -1,6 +1,15 @@
+import HangingLamp from "../BgAnimations/HangingLamp";
+import OrbitIcons from "../BgAnimations/OrbitIcons";
+import SnowCanvas from "../BgAnimations/SnowCanvas";
+
 const Hero: React.FC = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 bg-white dark:bg-gray-900">
+      <SnowCanvas />
+      <OrbitIcons />
+      <HangingLamp color="yellow" left="4%" top="25px" />
+      <HangingLamp color="red" left="6%" top="45px" />
+      
       <div className="max-w-4xl text-center">
         {/* Badge */}
         <div className="relative inline-block mb-6 px-6 py-2 rounded-full text-sm font-semibold

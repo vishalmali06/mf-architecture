@@ -1,0 +1,8 @@
+.lamp { position: absolute; z-index: 4; width: 24px; height: 24px; }
+.lamp .wire { position: absolute; left: 50%; top: -80px; width: 2px; height: 80px; background: rgba(200,200,200,0.6); transform: translateX(-50%); }
+.lamp .bulb { position: absolute; width: 28px; height: 28px; border-radius: 999px; left: 50%; top: 0; transform: translate(-50%, 0); }
+.lamp .bulb-glow { position: absolute; left: 50%; top: 2px; transform: translateX(-50%); width: 60px; height: 60px; border-radius: 50%; filter: blur(18px); opacity: 0.38; pointer-events: none; }
+.lamp.red .bulb { background: radial-gradient(circle, #fff 0%, #ff3c3c 50%, #aa2222 100%); }
+.lamp.red .bulb-glow { background: radial-gradient(circle, rgba(255,60,60,0.55), transparent 70%); }
+.lamp.yellow .bulb { background: radial-gradient(circle, #fff 0%, #ffcf66 50%, #b67200 100%); }
+.lamp.yellow .bulb-glow { background: radial-gradient(circle, rgba(255,220,120,0.55), transparent 70%); }
